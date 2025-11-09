@@ -46,7 +46,7 @@ All services and their access information:
 
 | Service | Local | Production |
 |---------|-------|------------|
-| Application | http://localhost:5000 | https://bookhub-ze18.onrender.com/ |
+| Application | http://localhost:5000 | https://bookhub-ze18.onrender.com/
 | API Docs | http://localhost:5000/api/docs | https://bookhub-ze18.onrender.com/api/docs/ |
 | Health Check | http://localhost:5000/health | https://bookhub-ze18.onrender.com/health |
 | Prometheus | http://localhost:9090 | https://bookhub-prometheus.onrender.com/targets |
