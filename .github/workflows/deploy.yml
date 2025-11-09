@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🧾 Checkout code
+      - name: 🧾 Checkout repository
         uses: actions/checkout@v4
 
       - name: 🟢 Setup Node.js
@@ -25,8 +25,11 @@ jobs:
       - name: 🧱 Build project
         run: npm run build
 
-      - name: 🚀 Deploy to Railway
-        uses: railwayapp/actions@v2
-        with:
-          railwayToken: ${{ secrets.RAILWAY_TOKEN }}
-          projectId: ${{ secrets.RAILWAY_PROJECT_ID }}
+      - name: 🚀 Deploy with Railway CLI
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_PROJECT_ID: ${{ secrets.RAILWAY_PROJECT_ID }}
+        run: |
+          npm install -g @railway/cli
+          railway link --project $RAILWAY_PROJECT_ID
+          railway up --service bookhub --yes
