@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.env
+app.log
+docker-data/
+client/dist/
