@@ -46,12 +46,11 @@ All services and their access information:
 
 | Service | Local | Production |
 |---------|-------|------------|
-| Application | http://localhost:5000 | https://bookhub-ze18.onrender.com/
-| API Docs | http://localhost:5000/api/docs | https://bookhub-ze18.onrender.com/api/docs/ |
-| Health Check | http://localhost:5000/health | https://bookhub-ze18.onrender.com/health |
-| Prometheus | http://localhost:9090 | https://bookhub-prometheus.onrender.com/targets |
-| Grafana | http://localhost:3001 | https://bookhub-grafana.onrender.com/d/bookhub_main/bookhub-application-dashboard |
-
+| Application | http://localhost:5000 | [https://bookhub-ze18.onrender.com/](https://bookhub-ze18.onrender.com/)
+| API Docs | http://localhost:5000/api/docs | [https://bookhub-ze18.onrender.com/api/docs/ ](https://bookhub-ze18.onrender.com/api/docs/)
+| Health Check | http://localhost:5000/health | [https://bookhub-ze18.onrender.com/health ](https://bookhub-ze18.onrender.com/health)
+| Prometheus | http://localhost:9090 | [https://bookhub-prometheus.onrender.com/targets ](https://bookhub-prometheus.onrender.com/targets)
+| Grafana | http://localhost:3001 |[ https://bookhub-grafana.onrender.com/login](https://bookhub-grafana.onrender.com/login)
 ### Default Credentials
 
 | Service | Username | Password | Notes |
