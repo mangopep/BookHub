@@ -9,7 +9,7 @@ import { metricsMiddleware } from "./metrics";
 
 const app = express();
 
-// Trust proxy - required for rate limiting and getting correct client IPs
+// Trust proxy - required for rate limiting and correct client IPs
 app.set("trust proxy", 1);
 
 declare module "http" {
@@ -22,10 +22,10 @@ declare module "http" {
 // 🛡️ Middleware Setup
 // ----------------------------------------------------------
 
-// 1. Security first
+// 1. Security middleware
 setupSecurityMiddleware(app);
 
-// 2. Metrics before routes
+// 2. Metrics middleware (before routes)
 app.use(metricsMiddleware);
 
 // 3. Compression for performance
@@ -97,21 +97,15 @@ app.use((req, res, next) => {
   }
 
   // --------------------------------------------------------
-  // 🧠 Safe server binding configuration
+  // 🧠 Safe server binding configuration (Render + Local)
   // --------------------------------------------------------
   const port = parseInt(process.env.PORT || "5000", 10);
-
-  // Auto-detect correct host:
-  // - Local (macOS, Windows, Linux): use 127.0.0.1
-  // - Cloud (Replit, Railway, etc.): use 0.0.0.0
   const host =
-    process.env.REPLIT_DEV_DOMAIN || process.env.RAILWAY_ENVIRONMENT
-      ? "0.0.0.0"
-      : "127.0.0.1";
+    process.env.NODE_ENV === "production" ? "0.0.0.0" : "127.0.0.1";
 
-  // ❌ Removed reusePort (causes ENOTSUP on macOS / Node v24)
   server.listen(port, host, () => {
     log(`✅ Server running on http://${host}:${port}`);
+    log(`🌐 Environment: ${process.env.NODE_ENV}`);
   });
 
   // Graceful shutdown
