@@ -32,12 +32,9 @@ jobs:
         run: |
           echo "🔐 Installing Railway CLI..."
           npm install -g @railway/cli
-          
-          echo "🔑 Logging in securely to Railway..."
-          railway login --token $RAILWAY_TOKEN
-          
+
           echo "🔗 Linking project..."
           railway link --project $RAILWAY_PROJECT_ID
-          
+
           echo "🚀 Deploying BookHub service..."
-          railway up --yes
+          RAILWAY_TOKEN=$RAILWAY_TOKEN railway up --yes
