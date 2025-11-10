@@ -132,9 +132,9 @@ export default function AdminLogin() {
             </form>
             <div className="mt-4 p-3 bg-muted rounded-md">
               <p className="text-xs text-muted-foreground">
-                <strong>Default Admin Credentials:</strong><br />
+                {/* <strong>Default Admin Credentials:</strong><br />
                 Email: admin@bookhub.com<br />
-                Password: admin123
+                Password: admin123 */}
               </p>
             </div>
             <div className="mt-4 text-center">
