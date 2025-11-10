@@ -130,13 +130,13 @@ export default function AdminLogin() {
                 )}
               </Button>
             </form>
-            <div className="mt-4 p-3 bg-muted rounded-md">
-              <p className="text-xs text-muted-foreground">
+            {/* <div className="mt-4 p-3 bg-muted rounded-md">
+              {/* <p className="text-xs text-muted-foreground">
                 {/* <strong>Default Admin Credentials:</strong><br />
                 Email: admin@bookhub.com<br />
                 Password: admin123 */}
-              </p>
-            </div>
+              </p> */}
+            </div> */}
             <div className="mt-4 text-center">
               <Link href="/login">
                 <span className="text-sm text-primary hover:underline cursor-pointer" data-testid="link-user-login">
